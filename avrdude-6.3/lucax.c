@@ -130,7 +130,7 @@ static int lucax_init(PROGRAMMER * pgm, AVRPART * part){
 
 
 	} else {
-		avrdude_message(MSG_INFO, "\nError: LucaX programmer supports PDI only devices (xmega series)\n");
+		avrdude_message(MSG_INFO, "\nError: LucaX programmer supports PDI only devices (xmega serie)\n");
 		return -1;
 	}
 	return  0;
@@ -204,6 +204,11 @@ static int lucax_read_byte(PROGRAMMER * pgm, AVRPART * p, AVRMEM * m, unsigned l
 			avrdude_message(MSG_INFO, "USB error - 2");
 			return -1;
 		}
+		if(actual != 1){
+			avrdude_message(MSG_INFO, "USB error - transferred %i bytes instead of 1", actual);
+			return -1;
+		}
+
 	}
 
 	return 0;
@@ -251,7 +256,7 @@ static int lucax_paged_write(PROGRAMMER * pgm, AVRPART * p, AVRMEM * m,
 	} else if(strcmp(m->desc, "eeprom")==0){
 		mem = LUCAX_PDI_EEPROM;
 	} else {
-		avrdude_message(MSG_INFO, "Error: this memory is not supported in page writing!");
+		avrdude_message(MSG_INFO, "Error: the memory region %s is not supported in page writing!", m->desc);
 		return -1;
 	}
 
