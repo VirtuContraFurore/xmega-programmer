@@ -15,7 +15,7 @@ typedef enum {NO_ERROR = 0, PDI_DISABLED = 1, TIME_OUT = 2, INVALID_ADDRESS = 3}
 /*Exit PDI mode and let the device execute its own code*/
 void pdi_exit(void);
 
-/*Initialize the PDI controller enabling the use of any other PDI function*/
+/*Initialize the PDI controller enabling the use of other PDI function*/
 PdiResult pdi_init(unsigned int freq_khz);
 
 /*These functions read and write a single byte to the PDI address space*/
