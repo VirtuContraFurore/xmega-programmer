@@ -1,5 +1,6 @@
 # xmega-programmer
-AtXmega programmer using an arduino leonardo thanks to https://www.avrfreaks.net/projects/atxmega-programmer-050
+AtXmega programmer using an arduino leonardo.
+For wiring: https://www.avrfreaks.net/projects/atxmega-programmer-050
 
 ## Avrdude 6.3 patch
 * the diff file contains the patch to avrdude 6.3
