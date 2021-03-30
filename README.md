@@ -1,6 +1,5 @@
 # xmega-programmer
 AtXmega programmer using an arduino leonardo.
-For wiring: https://www.avrfreaks.net/projects/atxmega-programmer-050
 
 ## Avrdude 6.3 patch
 * the diff file contains the patch to avrdude 6.3
@@ -10,7 +9,7 @@ For wiring: https://www.avrfreaks.net/projects/atxmega-programmer-050
 You need to overwrite the bootloader using an ISP (like a cheap usb-asp)
 
 ## Circuit
-Is the same shown in the first link, but you have to remove a led from arduino leonardo in order to free the usart clock, then solder to the pcb led track a wire. ATmega32U4 features a clocked usart on PD1 (RX), PD2 (TX) and PD5 (XCK); see atmel's datasheet for details.
+For wiring: follow the circuit described at https://www.avrfreaks.net/projects/atxmega-programmer-050, but you have to remove a led from arduino leonardo in order to free the usart clock, then solder to the pcb led track a wire. ATmega32U4 features a clocked usart on PD1 (RX), PD2 (TX) and PD5 (XCK); see atmel's datasheet for details.
 The target xmega mcu is connected to arduino's 3.3 voltage reg: be careful.
 
 ## Author
